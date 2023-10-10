@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>Burger list</title>
+    </head>
+
+    <body>
+        <h1>My burger Stock</h1>
+        <ul style="list-style-type: square;">
+            {%for burger in burger_list%}
+                <li >{{burger.name}} : {{burger.price}} {%if burger.is_set%}[Set] {%else%} [Single]{%endif%}</li>
+            {%endfor%}  
+        </ul>
+
+        <form method="POST">{%csrf_token%}
+            {{ burger_form.as_p}}
+            <button type="submit">Save</button>
+        </form>
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Burger Stock</title>
+        </head>
+        <body>
+            <h1>My Burger Stock</h1>
+            <ul>
+                {% for burger in burger_list %}
+                    <li>
+                        {{ burger.name }} : {{ burger.price }}{% if burger.is_set %} [Set] {% else %} [Single] {% endif %}
+                    </li>
+                {% endfor %}
+            
+                <form method="POST" action="{% url 'edit-burger' pk=burger.name %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="_method" value="PUT">
+                    <input type="text" name="name" value="{{ burger.name }}">
+                    <input type="text" name="price" value="{{ burger.price }}">
+                    <button type="submit">수정</button>
+                </form>
+                <form method="POST" action="{% url 'del-burger' pk=burger.name %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit">삭제</button>
+                </form>
+            </ul>
+            <h2>Add New Burger</h2>
+            <form method="POST">
+                {% csrf_token %}
+                {{ burger_form.as_p }}
+                <button type="submit">추가</button>
+            </form>
+        </body>
+        </html>
+        
+    </body>
+</html>

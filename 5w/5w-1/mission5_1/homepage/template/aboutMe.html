@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>자기소개 페이지</title>
+    <!-- 외부 CSS 파일 링크 -->
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="{%static 'forMe/style.css'%}">
+    <!-- 외부 JavaScript 파일 링크 -->
+    <!--<script src="script.js"></script>-->
+    <!-- 스타일 직접 추가 -->
+    <!--<style></style> -->
+
+</head>
+<body>
+   <div id="title">
+        {%load static%}
+        <img src="{% static 'forMe/programmers-logo-light.jpg' %}" alt="프로그래머스 로고" style ="height: 35px;"></img>
+        <h1>프로그래머스 인공지능 데브코스 6기 A반</h1>
+    </div>
+
+    <div id="intro">
+        <h2>안녕하세요, 6기 A반 김정연입니다.</h2>
+        <p>아래 탭을 클릭해보세요.</p>
+        <div class = "button-container">
+            <button id="show-button1" onclick="toggleInfo('Info1')">기본 정보</button>
+            <button id="show-button2" onclick="toggleInfo('Info2')">우리 동네</button>
+            <button id="show-button3" onclick="toggleInfo('Info3')">전공 분야</button>
+        </div>  
+    </div>
+
+    <div id="Info1" class="hidden-div">
+        <h2>🎉기본 소개🎉</h2>
+        <h4>안녕하세요~! 앞으로 5개월간 과정을 함께하게 된 김정연이라고 합니다.
+            제 나이는 26이고, 현재 4학년 재학 중인 학부생이에요. <br>
+            <div class="info-box">
+                📖 MBTI : ESTP<br>
+                ⚽️ 취미 : 여행, 풋살, LP바에서 음악 감상<br>
+                🏎️ 특기 : 운전(?)<br>
+                🍒 선호음식 : 스시, 숯불 닭갈비, 체리 <br>
+                🔗 Git ID : JY-maru<br>
+            </div>
+            의외라고 말씀해주시는게, 좋아하는 과일이 체리라는 점이래요ㅋㅋ <br>
+            저는 체리향을 좋아합니다 :> 베라 체리 쥬빌레 맛있더라구요<br>
+            참고로 제 생일은 12월 4일이에요 ^!^ 
+        </h4>
+    </div>
+
+    <div id="Info2" class="hidden-div">
+        <h4>
+            저는 서울에서 태어났습니다. 어렸을 때 잠깐 안양에서 살았다가, 다시 서울로 올라와 쭉 살고
+            살고 있어요.
+            <div class="info-box">
+                🏠 지역 : 잠실<br>
+                <br>
+                잠실이 생소하신 분도 계실텐데요, 저의 집 바로 앞에 롯데 월드 타워가 있어요! <br>
+                저는 질리도록 봐서 사실 잘 안가봐요 ㅋㅋㅋ <br>
+                또 유명한 곳은, 석촌호수가 있습니다! 늦저녁에 간맥할 때 딱 좋죠 ✌️ <br>
+                다만 벚꽃 시즌 때 사람이 너무 많아서 동네가 너무 북적북적해져요 😂
+            </div>
+        </h4>
+    
+    </div>
+    
+    <div id="Info3" class="hidden-div">
+        <h4>
+            <div class="info-box">
+                💻 전공 : Ai융합학부<br>
+                <br>
+                흔히 말하는 컴공 생각하시면 됩니다. 분야가 너무 방대한 나머지 저도 제 관심분야를 정해야하는데,
+                지금 가장 관심있는 분야는 CV입니다. 훗날 자율주행 쪽도 공부 해보고싶어요! 부족한게 많지만 한번 
+                열심히 해보려합니다. 앞으로 잘 부탁드려요~😁🙏
+            </div>
+        </h4>
+    </div>
+    
+    <!-- JavaScript 추가하기 -->
+    {%load static%}
+    <script src="{%static 'forMe/show_block.js' %}"></script>
+</body>
+</html>

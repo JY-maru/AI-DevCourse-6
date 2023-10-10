@@ -1,0 +1,58 @@
+/* CSS */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #181b38;
+}
+
+h1 {
+    color: #fff;
+}
+
+h2 {
+    color: #333;
+}
+
+#title {
+    padding: 20px;
+    background-color: #1f244a;
+}
+#intro {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0.1, 0.3);
+    border: 1px solid #181b38;
+}
+
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+} 
+
+/* CSS */
+.info-box {
+     /* 테두리 스타일 지정 */
+    padding: 10px; /* 내부 여백 설정 */
+    margin: 10px 0; /* 외부 여백 설정 */
+    background-color: #F4F4F8; /* 배경색 설정 */
+}
+
+
+.hidden-div{
+    display:none;
+    background-color:#fff;
+    position: relative;
+    top: 50%; /*버튼 아래에 배치 */
+    padding: 20px;
+    border: 1px solid #181b38;
+}
+
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 버튼 크기와 반응형 설정 */
+    gap: 10px; /* 버튼 사이 여백 설정 */
+}
